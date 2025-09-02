@@ -1,0 +1,19 @@
+### FIND ALL
+GET http://localhost:3000/accounts
+
+### FIND ONE
+GET http://localhost:3000/accounts/3
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwibmFtZSI6IkpvaG4gRG9lIiwiZW1haWwiOiJqb2huLmRvZUBleGFtcGxlLmNvbSIsImlhdCI6MTc1Njc3NTE3OCwiZXhwIjoxNzU2Nzc4Nzc4fQ.XmVN_gQ3vUGAL-lyTjv6UFT_s41VIbGnXniz9sR6R-g
+
+### CREATE
+POST http://localhost:3000/accounts
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe2@example.com",
+  "password": "password"
+}
+
+### DELETE
+DELETE http://localhost:3000/accounts/1

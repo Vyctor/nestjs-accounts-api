@@ -1,0 +1,24 @@
+services:
+  accounts-database:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: accounts
+    ports:
+      - 3306:3306
+    volumes:
+      - accounts-database:/var/lib/mysql
+    networks:
+      - accounts-network
+  accounts-cache:
+    image: redis:7.4
+    ports:
+      - 6379:6379
+    networks:
+      - accounts-network
+
+volumes:
+  accounts-database:
+networks:
+  accounts-network:
+    driver: bridge
